@@ -50,7 +50,7 @@ export default function Footer() {
               </div>
               <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-zinc-500">
                 <div>Mock Feed: <span className="text-zinc-400">Active</span></div>
-                <div>Server Latency: <span className="text-zinc-400">8ms</span></div>
+                <div>Server Latency: <span className="text-zinc-400">8ms..</span></div>
               </div>
             </div>
           </div>
