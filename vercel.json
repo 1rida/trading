@@ -1,4 +1,4 @@
 {
-  "buildCommand": "cd my-app && npm run build",
-  "outputDirectory": "my-app"
+  "buildCommand": "npm --prefix my-app run build",
+  "outputDirectory": "my-app/.next"
 }
