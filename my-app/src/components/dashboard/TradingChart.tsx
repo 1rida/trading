@@ -65,7 +65,7 @@ export function TradingChart({ symbol }: TradingChartProps) {
 
   const getY = (price: number) => height - volumeHeight - padding - ((price - minPrice) / priceRange) * (height - volumeHeight - padding * 2);
   const getX = (index: number) => padding + index * candleWidth + candleWidth / 2;
-  const getVolumeY = (vol: number) => height - (vol / maxVolume) * volumeHeight;
+  const getVolumeY = (vol: number) => maxVolume > 0 ? height - (vol / maxVolume) * volumeHeight : height;
 
   return (
     <div className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl p-4 flex flex-col h-[500px]">
