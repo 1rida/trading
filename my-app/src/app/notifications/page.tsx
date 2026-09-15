@@ -10,7 +10,7 @@ export default function NotificationsPage() {
 
     return (
         <main className="min-h-screen bg-zinc-950 text-white">
-            <div className="max-w-4xl mx-auto px-4 py-10">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-3xl font-bold">Notifications</h1>
                     <div className="flex gap-2">

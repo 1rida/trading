@@ -69,7 +69,7 @@ export function TradingChart({ symbol }: TradingChartProps) {
   const getVolumeY = (vol: number) => maxVolume > 0 ? height - (vol / maxVolume) * volumeHeight : height;
 
   return (
-    <div className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl p-4 flex flex-col h-[500px]">
+    <div className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl p-4 flex flex-col h-64 sm:h-96 lg:h-[500px]">
       {error && <div className="mb-4 text-xs bg-rose-500/10 text-rose-500 text-center py-2 rounded">Using mock data (Binance API unavailable)</div>}
       <div className="flex items-center justify-between mb-4 border-b border-zinc-800 pb-4">
         <div className="flex items-center gap-4">
@@ -85,8 +85,8 @@ export function TradingChart({ symbol }: TradingChartProps) {
             ))}
           </div>
           <div className="flex gap-2">
-            <button onClick={() => setShowSMA(!showSMA)} className={`text-[10px] px-2 py-1 rounded border ${showSMA ? 'border-emerald-500 text-emerald-400' : 'border-zinc-700 text-zinc-500'}`}>SMA</button>
-            <button onClick={() => setShowEMA(!showEMA)} className={`text-[10px] px-2 py-1 rounded border ${showEMA ? 'border-emerald-500 text-emerald-400' : 'border-zinc-700 text-zinc-500'}`}>EMA</button>
+            <button onClick={() => setShowSMA(!showSMA)} className={`text-[10px] w-12 px-2 py-1 rounded border ${showSMA ? 'border-emerald-500 text-emerald-400' : 'border-zinc-700 text-zinc-500'}`}>SMA</button>
+            <button onClick={() => setShowEMA(!showEMA)} className={`text-[10px] w-12 px-2 py-1 rounded border ${showEMA ? 'border-emerald-500 text-emerald-400' : 'border-zinc-700 text-zinc-500'}`}>EMA</button>
           </div>
         </div>
       </div>

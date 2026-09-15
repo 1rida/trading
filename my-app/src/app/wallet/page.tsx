@@ -5,7 +5,7 @@ export default function WalletPage() {
     const { balances } = useDemoTrade();
     return (
         <main className="min-h-screen bg-zinc-950 text-white">
-            <div className="max-w-4xl mx-auto px-4 py-10">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
                 <h1 className="text-3xl font-bold mb-8">Wallet</h1>
                 <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
                     <div className="text-zinc-500 text-sm">Available USDT Balance</div>

@@ -40,7 +40,7 @@ export default function OrderBook({ symbol }: { symbol: string }) {
   if (error) return <div className="p-4 text-center text-sm text-rose-500">Error loading data.</div>;
 
   return (
-    <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden flex flex-col h-[400px]">
+    <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden flex flex-col h-64 sm:h-96">
       <div className="p-3 border-b border-zinc-800 bg-zinc-950 font-bold text-xs text-zinc-400">Order Book</div>
       <div className="flex-1 flex flex-col font-mono text-[11px] p-2 overflow-y-auto">
         {data.asks.slice().reverse().map((ask, i) => {

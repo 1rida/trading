@@ -29,7 +29,7 @@ export default function AlertsPage() {
 
     return (
         <main className="min-h-screen bg-zinc-950 text-white">
-            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-4xl mx-auto px-4 py-10">
+            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
                 <motion.h1 variants={itemVariants} className="text-3xl font-bold mb-8">Price Alerts</motion.h1>
                 
                 <motion.form variants={itemVariants} onSubmit={handleAddAlert} className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 mb-8 flex gap-4 items-end">
