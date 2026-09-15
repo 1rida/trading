@@ -46,6 +46,7 @@ export function TradingChart({ symbol }: TradingChartProps) {
   }, [data, showSMA]);
 
   if (loading) return <div className="w-full h-[500px] flex items-center justify-center text-zinc-500 bg-zinc-900/50 rounded-xl">Loading Chart Data...</div>;
+  if (data.length === 0) return <div className="w-full h-[500px] flex items-center justify-center text-zinc-500 bg-zinc-900/50 rounded-xl">No Chart Data</div>;
 
   // Chart Dimensions
   const width = 800;

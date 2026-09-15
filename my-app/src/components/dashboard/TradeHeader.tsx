@@ -20,6 +20,10 @@ export const TradeHeader = ({ symbol }: { symbol: string }) => {
             fetch(`/api/ticker?symbol=${symbol}`)
                 .then(res => res.json())
                 .then(data => {
+                    if (data.error) {
+                        console.error('Ticker API error:', data.error);
+                        return;
+                    }
                     setTicker(data);
                     setCurrentPrice(data.price);
                 })
