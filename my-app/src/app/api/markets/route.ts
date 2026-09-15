@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { mockMarkets } from '@/lib/mock-data';
 
 export async function GET() {
   try {
@@ -26,6 +27,6 @@ export async function GET() {
     return NextResponse.json(markets);
   } catch (error) {
     console.error('Binance markets error:', error);
-    return NextResponse.json({ error: 'Failed to fetch market data' }, { status: 500 });
+    return NextResponse.json(mockMarkets);
   }
 }
