@@ -72,9 +72,10 @@ export const DemoTradeProvider = ({ children }: { children: ReactNode }) => {
             setBalances(prev => ({ ...prev, USDT: prev.USDT - total }));
             setHoldings(prev => {
                 const old = prev[asset] || { amount: 0, avgEntryPrice: 0 };
+                const newAmount = old.amount + order.amount;
                 return { ...prev, [asset]: { 
-                    amount: old.amount + order.amount, 
-                    avgEntryPrice: ((old.avgEntryPrice * old.amount) + (price * order.amount)) / (old.amount + order.amount) 
+                    amount: newAmount, 
+                    avgEntryPrice: newAmount > 0 ? ((old.avgEntryPrice * old.amount) + (price * order.amount)) / newAmount : price
                 }};
             });
         } else {
