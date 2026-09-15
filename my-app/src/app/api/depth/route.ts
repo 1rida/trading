@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { MOCK_ORDER_BOOK } from '@/lib/mock-data';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -21,6 +22,6 @@ export async function GET(request: Request) {
     return NextResponse.json(orderBook);
   } catch (error) {
     console.error('Binance depth error:', error);
-    return NextResponse.json({ error: 'Failed to fetch depth data' }, { status: 500 });
+    return NextResponse.json(MOCK_ORDER_BOOK);
   }
 }

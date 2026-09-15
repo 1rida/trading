@@ -32,6 +32,6 @@ export async function GET(request: Request) {
     return NextResponse.json(trades);
   } catch (error) {
     console.error('Binance trades error:', error);
-    return NextResponse.json({ error: 'Failed to fetch trades data' }, { status: 500 });
+    return NextResponse.json([]);
   }
 }

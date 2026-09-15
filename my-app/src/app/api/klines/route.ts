@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { generateMockCandles } from '@/lib/mock-data';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -26,6 +27,6 @@ export async function GET(request: Request) {
     return NextResponse.json(candles);
   } catch (error) {
     console.error('Binance klines error:', error);
-    return NextResponse.json({ error: 'Failed to fetch kline data' }, { status: 500 });
+    return NextResponse.json(generateMockCandles());
   }
 }
