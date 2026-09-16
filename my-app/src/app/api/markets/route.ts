@@ -2,12 +2,20 @@ import { NextResponse } from 'next/server';
 import { mockMarkets } from '@/lib/mock-data';
 
 export async function GET() {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
   try {
     const response = await fetch('https://api.binance.com/api/v3/ticker/24hr', {
+      signal: controller.signal,
       next: { revalidate: 60 } 
     });
+    clearTimeout(id);
 
-    if (!response.ok) throw new Error('Failed to fetch from Binance');
+    if (!response.ok) {
+        console.error('Binance API response not ok:', response.status, response.statusText);
+        throw new Error(`Failed to fetch from Binance: ${response.status} ${response.statusText}`);
+    }
 
     const data = await response.json();
 
@@ -26,7 +34,9 @@ export async function GET() {
 
     return NextResponse.json(markets);
   } catch (error) {
+    clearTimeout(id);
     console.error('Binance markets error:', error);
+    // Return mock data if fetch fails
     return NextResponse.json(mockMarkets);
   }
 }
